@@ -17,7 +17,6 @@ class UserController {
             url: `https://api.mailboxvalidator.com/v1/validation/single?key=${process.env.MAIL_VALIDATOR}&email=${req.body.email}`
         })
             .then(validateResult => {
-
                 if (validateResult.data.is_verified == "True") {
                     User.findOne({
                         where: { email: req.body.email }
@@ -51,11 +50,11 @@ class UserController {
                     res.status(401).json({ msg: `email invalid` })
                 }
             })
-            .catch(err =>{
+            .catch(err => {
                 res.status(500).json({ error: err, msg: `internal server error` })
             })
-
     }
+    
     static loginUser = (req, res) => {
         let { email, password } = req.body
         User.findOne({
