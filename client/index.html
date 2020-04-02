@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
-​
 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
+    <meta name="google-signin-client_id"
+    content="344450414832-88ujhmqg8b9jeskrvfn5kojd0tsikt68.apps.googleusercontent.com">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -16,47 +17,62 @@
     <script src="covid.js"></script>
     <title>SPA</title>
 </head>
-​
 
 <body>
     <div class="container">
         <nav class="navbar navbar-light bg-dark text-white mb-3">
             <h1>Bootstrap Basic UI</h1>
+            <button id="tombollogout" class="btn btn-secondary mb-2">Logout</button>
         </nav>
 
-        <div id="theLogin">
-            <h5>Login</h5>
-            <div class="row">
-                <div class="col-md-3">
-                    <input type="text" id="username" placeholder="username" class="form-control">
+        <div id="theLogin" class="">
+
+            <h2>Member Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="usr">Email:</label>
+                    <input type="text" class="form-control" placeholder="Email" id="emaillogin" name="email" required>
                 </div>
-                <div class="col-md-3">
-                    <input type="password" id="password" placeholder="password" class="form-control">
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="passwordlogin" placeholder="Password" name="password"
+                        required>
+                    <input class="mt-3" type="checkbox" onclick="showHidePassLogin()">Show Password
                 </div>
-                <div class="col-md-4">
-                    <button class="btn btn-sm btn-primary" id="login-btn">LOGIN</button>
-                    or
-                    <button class="btn btn-sm btn-success" id="register-btn">REGISTER</button>
-                </div>
+                <button type="submit" class="btn btn-primary w-100">Sign-In</button>
+            </form>
+    
+            <div>
+                <button id="tombolpindahregister" class="btn btn-success mt-2 w-100">Go to Register</button>
             </div>
+            <div class="g-signin2 mt-2" data-onsuccess="onSignIn"></div>
         </div>
+
+
+
         <div id="theRegister">
-            <h5>Register</h5>
-            <div class="row">
-                <div class="col-md-3">
-                    <input type="text" id="username" placeholder="username" class="form-control">
+            <h2>Register</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="pwd">Email:</label>
+                    <input type="text" class="form-control" id="emailregister" placeholder="Email" name="email">
                 </div>
-                <div class="col-md-3">
-                    <input type="password" id="password" placeholder="password" class="form-control">
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="passwordregister" placeholder="Password"
+                        name="password">
+                    <input class="mt-3" type="checkbox" onclick="showHidePassRegister()">Show Password
                 </div>
-                <div class="col-md-2">
-                    <button class="btn btn-sm btn-primary" id="login-btn">REGISTER</button>
-                </div>
+                <button id="tombolsubmitregister" type="submit" class="btn btn-primary w-100">Sign-Up</button>
+            </form>
+    
+            <div>
+                <button id="tombolpindahlogin" class="btn btn-success mt-2 w-100">Go to Login</button>
             </div>
         </div>
 
-        <div id="theNews" class="bg-dark text-white">
-            <h5>new div</h5>
+        <div id="theNews" class="bg-dark text-white text-center">
+            <h3>UPDATE ABOUT COVID19</h3>
         </div>
 
         <div id="theStats" class="bg-dark text-white">
@@ -83,9 +99,11 @@
         </div>
 
     </div>
-
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="news.js"></script>
+    <script src="user.js" ></script>
 </body>
-​
 
 </html>
