@@ -8,22 +8,24 @@
     <!-- Bootstrap CSS -->
     <meta name="google-signin-client_id"
     content="344450414832-88ujhmqg8b9jeskrvfn5kojd0tsikt68.apps.googleusercontent.com">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-l7xaoY0cJM4h9xh1RfazbgJVUZvdtyLWPueWNtLAphf/UbBgOVzqbOTogxPwYLHM" crossorigin="anonymous">
+        
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
 
-    <script src="covid.js"></script>
+    
     <title>SPA</title>
 </head>
 
 <body>
     <div class="container">
-        <nav class="navbar navbar-light bg-dark text-white mb-3">
-            <h1>Bootstrap Basic UI</h1>
+        <nav class="navbar navbar-light bg-danger text-white mb-3">
+            <h1>Covid-19 Update</h1>
             <button id="tombollogout" class="btn btn-secondary mb-2">Logout</button>
         </nav>
+
+        <div id="errormess"></div>
 
         <div id="theLogin" class="">
 
@@ -65,37 +67,37 @@
                 </div>
                 <button id="tombolsubmitregister" type="submit" class="btn btn-primary w-100">Sign-Up</button>
             </form>
-    
+            
             <div>
                 <button id="tombolpindahlogin" class="btn btn-success mt-2 w-100">Go to Login</button>
             </div>
         </div>
-
-        <div id="theNews" class="bg-dark text-white text-center">
-            <h3>UPDATE ABOUT COVID19</h3>
-        </div>
-
-        <div id="theStats" class="bg-dark text-white">
-            <h5>STATSS</h5>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" id="covid-main" href="">Covid-19 World Statistics</a>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0" id="searchCountryForm">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                            id="searchCountry">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+        
+                <div id="theStats" class="bg-dark text-white">
+        
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" id="covid-main" href="">Covid-19 World Statistics</a>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0" id="searchCountryForm">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                                    id="searchCountry">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </nav>
+                    <div id="tableholder">
+        
+                    </div>
+        
                 </div>
-            </nav>
-            <div id="tableholder">
+
+        <div id="theNews" class="bg-dark text-white text-center d-flex row">
+            <div>
+                <h3 class="width-100">UPDATE ABOUT COVID19</h3>
 
             </div>
-
-
-
-
         </div>
 
     </div>
@@ -104,6 +106,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="news.js"></script>
     <script src="user.js" ></script>
+    <script src="covid.js"></script>
 </body>
 
 </html>

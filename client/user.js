@@ -21,12 +21,14 @@ $(document).ready(function () {
         event.preventDefault()
         $("#theLogin").hide();
         $("#theRegister").show()
+        $("#register-form")[0].reset()
     });
 
     $("#tombolpindahlogin").click(function (event) {
         event.preventDefault()
         $("#theRegister").hide();
         $("#theLogin").show()
+        $("#errormess").html('')
     });
 
     $("#login-form").submit(function (event) {
@@ -46,12 +48,14 @@ $(document).ready(function () {
                 $('#tombollogout').show()
                 $('#theNews').show()
                 $('#theStats').show()
+                
             }
         })
     })
 
     $("#register-form").submit(function (event) {
         event.preventDefault()
+        
         $.ajax({
             url: "http://localhost:3000/users/register",
             type: "post",
@@ -67,6 +71,13 @@ $(document).ready(function () {
                 $('#tombollogout').show()
                 $('#theNews').show()
                 $('#theStats').show()
+                $("#errormess").html('')
+            },
+            error: function (err) {
+                console.log(err)
+                $("#errormess").html(`<div class="alert alert-danger" role="alert">
+                Sign Up Failed
+              </div>`)
             }
         })
     })

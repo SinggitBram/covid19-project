@@ -17,6 +17,7 @@ class UserController {
             url: `https://api.mailboxvalidator.com/v1/validation/single?key=${process.env.MAIL_VALIDATOR}&email=${req.body.email}`
         })
             .then(validateResult => {
+                console.log(`-------------------------------------------------------------------`)
                 if (validateResult.data.is_verified == "True") {
                     User.findOne({
                         where: { email: req.body.email }
@@ -47,6 +48,7 @@ class UserController {
                             }
                         })
                 } else {
+                    console.log(`ini masuk error yang sini`)
                     res.status(401).json({ msg: `email invalid` })
                 }
             })

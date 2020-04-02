@@ -13,13 +13,13 @@ $(document).ready(function () {
             }).done(res => {
                 let data = res.countryData[0]
                 tableHeader()
-                $('#tableBody').append(`<tr>
-                        <td class="text-white">${data.country}</td>
-                        <td class="text-white">${data.cases.total}</td>
-                        <td class="text-white">${data.cases.new}</td>
-                        <td class="text-white">${data.deaths.total}</td>
-                        <td class="text-white">${data.deaths.new}</td>
-                        <td class="text-white">${data.cases.recovered}</td>
+                $('#tableBody').append(`<tr class="table-info">
+                        <td class="text-dark">${data.country}</td>
+                        <td class="text-dark">${data.cases.total}</td>
+                        <td class="text-dark">${data.cases.new}</td>
+                        <td class="text-dark">${data.deaths.total}</td>
+                        <td class="text-dark">${data.deaths.new}</td>
+                        <td class="text-dark">${data.cases.recovered}</td>
                     </tr>`)
                 tableBody()
             }).fail(err => {
@@ -65,13 +65,13 @@ function tableBody() {
         let data = res.topCountries
         for (let i in data) {
             $('#tableBody').append(
-                `<tr>
-                    <td class="text-white">${data[i].country}</td>
-                    <td class="text-white">${data[i].cases.total}</td>
-                    <td class="text-white">${data[i].cases.new}</td>
-                    <td class="text-white">${data[i].deaths.total}</td>
-                    <td class="text-white">${data[i].deaths.new}</td>
-                    <td class="text-white">${data[i].cases.recovered}</td>
+                `<tr class="table-light">
+                    <td class="text-dark">${data[i].country}</td>
+                    <td class="text-dark">${data[i].cases.total}</td>
+                    <td class="text-dark">${data[i].cases.new}</td>
+                    <td class="text-dark">${data[i].deaths.total}</td>
+                    <td class="text-dark">${data[i].deaths.new}</td>
+                    <td class="text-dark">${data[i].cases.recovered}</td>
                 </tr>`
             )
         }
