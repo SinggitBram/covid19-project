@@ -10,6 +10,11 @@
     content="344450414832-88ujhmqg8b9jeskrvfn5kojd0tsikt68.apps.googleusercontent.com">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="covid.js"></script>
     <title>SPA</title>
 </head>
 
@@ -71,7 +76,26 @@
         </div>
 
         <div id="theStats" class="bg-dark text-white">
-            <h5>new div</h5>
+            <h5>STATSS</h5>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" id="covid-main" href="">Covid-19 World Statistics</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0" id="searchCountryForm">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                            id="searchCountry">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+            <div id="tableholder">
+
+            </div>
+
+
+
+
         </div>
 
     </div>
