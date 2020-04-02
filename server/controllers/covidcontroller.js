@@ -54,13 +54,18 @@ class covidController {
         })
             .then((response) => {
                 let countryData = response.data.response
-                res.status(200).json({ countryData })
+                if (countryData.length > 0) {
+                    res.status(200).json({ countryData })
+                } else {
+                    res.status(404).json({ msg: 'country not found' })
+                }
 
             })
             .catch((error) => {
                 console.log(error)
                 res.status(400).json(error)
             })
+
     }
 
 
