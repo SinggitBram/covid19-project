@@ -49,6 +49,9 @@ $(document).ready(function () {
                 $('.berita').show()
                 $('#theStats').show()
                 $("#errormess").html('')
+                $("#errormess").html(`<div class="alert alert-success" role="alert">
+                Welcome to Covid News
+              </div>`)
             },
             error: function (err) {
                 $("#errormess").html(`<div class="alert alert-danger" role="alert">
@@ -77,6 +80,9 @@ $(document).ready(function () {
                 $('.berita').show()
                 $('#theStats').show()
                 $("#errormess").html('')
+                $("#errormess").html(`<div class="alert alert-success" role="alert">
+                Welcome to Covid News
+              </div>`)
             },
             error: function (err) {
                 console.log(err)
@@ -106,6 +112,7 @@ $(document).ready(function () {
                 $('.berita').hide()
                 $('#theStats').hide()
                 $('#tombollogout').hide()
+                $("#errormess").html('')
                 $("#theLogin").show()
 
             } else if (result.dismiss === Swal.DismissReason.cancel) {
@@ -149,5 +156,9 @@ function onSignIn(googleUser) {
             $('#tombollogout').show()
             $('.berita').show()
             $('#theStats').show()
+            $("#errormess").html(`<div class="alert alert-success" role="alert">
+                Welcome to Covid News
+              </div>`)
+              
         })
 }
