@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <meta name="google-signin-client_id"
+    content="344450414832-88ujhmqg8b9jeskrvfn5kojd0tsikt68.apps.googleusercontent.com">
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-l7xaoY0cJM4h9xh1RfazbgJVUZvdtyLWPueWNtLAphf/UbBgOVzqbOTogxPwYLHM" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+
+    
+    <title>SPA</title>
+</head>
+
+<body style="background-color: #ddd;">
+    
+    <div class="container bg-light">
+        <nav class="navbar navbar-light bg-danger text-white mb-3">
+            <h1>Covid-19 Update</h1>
+            <button id="tombollogout" class="btn btn-secondary mb-2">Logout</button>
+        </nav>
+
+        <div id="errormess"></div>
+
+        <div id="theLogin" class="py-3">
+
+            <h2>Member Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="usr">Email:</label>
+                    <input type="text" class="form-control" placeholder="Email" id="emaillogin" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="passwordlogin" placeholder="Password" name="password"
+                        required>
+                    <input class="mt-3" type="checkbox" onclick="showHidePassLogin()">Show Password
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Sign-In</button>
+            </form>
+    
+            <div>
+                <button id="tombolpindahregister" class="btn btn-success mt-2 w-100">Go to Register</button>
+            </div>
+            <div class="g-signin2 mt-2" data-onsuccess="onSignIn"></div>
+        </div>
+
+        <div id="theRegister" class="py-3">
+            <h2>Register</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="pwd">Email:</label>
+                    <input type="text" class="form-control" id="emailregister" placeholder="Email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="passwordregister" placeholder="Password"
+                        name="password">
+                    <input class="mt-3" type="checkbox" onclick="showHidePassRegister()">Show Password
+                </div>
+                <button id="tombolsubmitregister" type="submit" class="btn btn-primary w-100">Sign-Up</button>
+            </form>
+            
+            <div>
+                <button id="tombolpindahlogin" class="btn btn-success mt-2 w-100">Go to Login</button>
+            </div>
+        </div>
+        
+                <div id="theStats" class="bg-dark text-white">
+        
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" id="covid-main" href="">Covid-19 World Statistics</a>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0" id="searchCountryForm">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                                    id="searchCountry">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </nav>
+                    <div id="tableholder">
+        
+                    </div>
+        
+                </div>
+                
+                <div class="berita">
+                    <h3 class="width-100 text-center bg-dark text-white py-3">UPDATE ABOUT COVID19</h3>
+                </div>
+        <div id="theNews" class="berita bg-dark text-white text-center row"">
+
+        </div>
+
+    </div>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="news.js"></script>
+    <script src="user.js" ></script>
+    <script src="covid.js"></script>
+</body>
+
+</html>
