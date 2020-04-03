@@ -17,7 +17,7 @@ class UserController {
             url: `https://api.mailboxvalidator.com/v1/validation/single?key=${process.env.MAIL_VALIDATOR}&email=${req.body.email}`
         })
             .then(validateResult => {
-                console.log(`-------------------------------------------------------------------`)
+        
                 if (validateResult.data.is_verified == "True") {
                     User.findOne({
                         where: { email: req.body.email }
@@ -48,7 +48,6 @@ class UserController {
                             }
                         })
                 } else {
-                    console.log(`ini masuk error yang sini`)
                     res.status(401).json({ msg: `email invalid` })
                 }
             })
@@ -103,7 +102,8 @@ class UserController {
                 }
             })
             .then(result => {
-                let token = jwt.sign({ id: result.id, email: result.email }, process.env.JWT_SECRET)
+
+                let token = jwt.sign({ id: result.dataValues.id, email: result.dataValues.email }, process.env.JWT_SECRET)
                 res.status(200).json({ token })
             })
             .catch(err => {

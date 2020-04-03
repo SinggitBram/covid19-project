@@ -8,7 +8,7 @@ $(document).ready(() => {
         // console.log(data);
         for( let i = 0; i < 9; i++ ){
             $('#theNews').append(`
-            <div class="card  col-4" style="width: 18rem">
+            <div class="card col-4" style="width: 18rem; float:left">
                 <img class="card-img-top" src="${data.data[i].urlToImage}">
                 <div id="title" class="card-body">
                 <h5 class="card-title text-dark">${data.data[i].title}</h5>

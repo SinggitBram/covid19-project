@@ -5,7 +5,7 @@ const server = 'http://localhost:3000'
 $(document).ready(function () {
     $("#theLogin").hide()
     $("#theRegister").hide()
-    $('#theNews').hide()
+    $('.berita').hide()
     $('#theStats').hide()
     $('#tombollogout').hide()
 
@@ -13,7 +13,7 @@ $(document).ready(function () {
         $("#theLogin").show()
     } else {
         $('#tombollogout').show()
-        $('#theNews').show()
+        $('.berita').show()
         $('#theStats').show()
     }
 
@@ -46,9 +46,14 @@ $(document).ready(function () {
                 $("#login-form")[0].reset()
                 $("#theLogin").hide()
                 $('#tombollogout').show()
-                $('#theNews').show()
+                $('.berita').show()
                 $('#theStats').show()
-                
+                $("#errormess").html('')
+            },
+            error: function (err) {
+                $("#errormess").html(`<div class="alert alert-danger" role="alert">
+                Wrong Email / Password 
+              </div>`)
             }
         })
     })
@@ -69,7 +74,7 @@ $(document).ready(function () {
                 $("#register-form")[0].reset()
                 $("#theRegister").hide(300)
                 $('#tombollogout').show()
-                $('#theNews').show()
+                $('.berita').show()
                 $('#theStats').show()
                 $("#errormess").html('')
             },
@@ -98,7 +103,7 @@ $(document).ready(function () {
                     console.log('User signed out.');
                 });
                 localStorage.clear()
-                $('#theNews').hide()
+                $('.berita').hide()
                 $('#theStats').hide()
                 $('#tombollogout').hide()
                 $("#theLogin").show()
@@ -142,7 +147,7 @@ function onSignIn(googleUser) {
             localStorage.setItem("token", data.token)
             $("#theLogin").hide(300)
             $('#tombollogout').show()
-            $('#theNews').show()
+            $('.berita').show()
             $('#theStats').show()
         })
 }
